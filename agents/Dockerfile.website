@@ -1,0 +1,31 @@
+# Website Generator Agent Dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy agent files
+COPY agents/websiteGeneratorAgent.js ./agents/
+COPY agents/runner.js ./
+COPY services/ ./services/
+COPY models/ ./models/
+COPY config/ ./config/
+
+# Create logs directory
+RUN mkdir -p logs uploads
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Change ownership
+RUN chown -R nodejs:nodejs /app
+USER nodejs
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD node healthcheck.js
+
+CMD ["node", "runner.js", "website-generator"]

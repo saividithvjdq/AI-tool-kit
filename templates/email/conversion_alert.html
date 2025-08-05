@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{subject}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px;
+        }
+        .metric-card {
+            background: #fff3cd;
+            border-left: 4px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #f39c12;
+            margin: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="font-size: 48px; margin-bottom: 10px;">⚠️</div>
+            <h1>Conversion Alert</h1>
+            <p>{{websiteName}}</p>
+        </div>
+        <div class="content">
+            <p>Hello,</p>
+            
+            <p>We noticed a change in your website's conversion performance that needs attention.</p>
+
+            {{#if currentRate}}
+            <div class="metric-card">
+                <p class="metric-value">{{currentRate}}%</p>
+                <p style="color: #666; font-size: 14px; margin: 5px 0 0 0;">Current Conversion Rate</p>
+            </div>
+            {{/if}}
+
+            <p>{{{content}}}</p>
+
+            <p>
+                <a href="{{dashboardUrl}}" class="btn">Analyze Conversions</a>
+            </p>
+
+            <p>Best regards,<br>
+            <strong>{{companyName}} Team</strong></p>
+        </div>
+        <div class="footer">
+            <p>Conversion optimization is key to business growth</p>
+            <p><a href="{{unsubscribeUrl}}">Manage Notifications</a></p>
+        </div>
+    </div>
+</body>
+</html>

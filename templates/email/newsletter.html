@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{subject}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .content h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .content p {
+            color: #555;
+            margin: 15px 0;
+        }
+        .stats-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            display: inline-block;
+            margin: 10px 15px 10px 0;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .stat-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .alert-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .alert-danger {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 {{title}}</h1>
+        </div>
+        <div class="content">
+            <p>Hello <strong>{{name}}</strong>,</p>
+            
+            {{#if isAlert}}
+            <div class="alert-{{alertType}}">
+                <strong>{{alertTitle}}</strong><br>
+                {{alertMessage}}
+            </div>
+            {{/if}}
+
+            <div>{{{content}}}</div>
+
+            {{#if stats}}
+            <div class="stats-container">
+                <h3>📊 Quick Stats</h3>
+                {{#each stats}}
+                <div class="stat-item">
+                    <div class="stat-label">{{label}}</div>
+                    <div class="stat-value">{{value}}</div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if actionUrl}}
+            <p>
+                <a href="{{actionUrl}}" class="btn">{{actionText}}</a>
+            </p>
+            {{/if}}
+
+            <p>Best regards,<br>
+            <strong>{{companyName}} Team</strong></p>
+        </div>
+        <div class="footer">
+            <p><strong>{{companyName}}</strong></p>
+            <p>{{companyAddress}}</p>
+            <p>
+                <a href="{{dashboardUrl}}">Dashboard</a> | 
+                <a href="{{supportUrl}}">Support</a> | 
+                <a href="{{unsubscribeUrl}}">Unsubscribe</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

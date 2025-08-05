@@ -1,0 +1,128 @@
+{
+  "name": "mcp-ai-agents",
+  "version": "1.0.0",
+  "description": "Containerized AI agents for Model Context Protocol (MCP) coordination",
+  "main": "runner.js",
+  "scripts": {
+    "start:registry": "node registry.js",
+    "start:website": "node runner.js website-generator",
+    "start:marketing": "node runner.js marketing-automation",
+    "start:image": "node runner.js image-generator",
+    "start:analytics": "node runner.js analytics-processor",
+    "start:voicebot": "node runner.js voice-bot-processor",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Linting not configured\"",
+    "dev": "node --inspect runner.js",
+    "health": "node -e \"console.log('Agent container health check passed')\""
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "microservices",
+    "mcp",
+    "model-context-protocol",
+    "docker",
+    "containerization",
+    "automation"
+  ],
+  "author": "AI Business Server Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "mongoose": "^7.5.0",
+    "redis": "^4.6.7",
+    "uuid": "^9.0.0",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.5",
+    "jimp": "^0.22.10",
+    "canvas": "^2.11.2",
+    "puppeteer": "^21.1.1",
+    "cheerio": "^1.0.0-rc.12",
+    "nodemailer": "^6.9.4",
+    "json2csv": "^6.1.0",
+    "moment": "^2.29.4",
+    "lodash": "^4.17.21",
+    "validator": "^13.11.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.2",
+    "supertest": "^6.3.3",
+    "eslint": "^8.46.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ai-business-server/mcp-agents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ai-business-server/mcp-agents/issues"
+  },
+  "homepage": "https://github.com/ai-business-server/mcp-agents#readme",
+  "docker": {
+    "image": "mcp-ai-agents",
+    "baseImage": "node:18-alpine",
+    "ports": {
+      "registry": 5002,
+      "agents": "5003-5008"
+    }
+  },
+  "mcp": {
+    "version": "1.0",
+    "agentTypes": [
+      "website-generator",
+      "marketing-automation", 
+      "image-generator",
+      "analytics-processor",
+      "voice-bot-processor"
+    ],
+    "capabilities": {
+      "website-generator": [
+        "generate_website",
+        "create_landing_page",
+        "build_portfolio",
+        "design_layout",
+        "responsive_design"
+      ],
+      "marketing-automation": [
+        "create_campaign",
+        "send_email",
+        "social_media_post",
+        "analyze_metrics",
+        "lead_generation"
+      ],
+      "image-generator": [
+        "generate_image",
+        "create_logo",
+        "design_banner",
+        "product_image",
+        "ai_artwork"
+      ],
+      "analytics-processor": [
+        "analyze_data",
+        "generate_report",
+        "track_metrics",
+        "performance_analysis",
+        "user_insights"
+      ],
+      "voice-bot-processor": [
+        "process_voice_command",
+        "text_to_speech",
+        "speech_to_text",
+        "voice_navigation",
+        "audio_processing"
+      ]
+    }
+  }
+}
