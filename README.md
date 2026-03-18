@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 AI Business Tool Kit</h1>
+  <h1>AI Business Tool Kit</h1>
   <p><b>A Complete Containerized AI Agentic System using Model Context Protocol (MCP)</b></p>
   <p>Scalable, isolated microservices architecture for automated business operations.</p>
 </div>
@@ -7,12 +7,12 @@
 <br />
 
 <div align="center">
-  <h2>🏗️ System Design Architecture</h2>
+  <h2>System Design Architecture</h2>
   <br />
   <table width="100%" border="1" cellpadding="15" cellspacing="0" style="border-collapse: collapse; min-width: 800px; margin: 0 auto; text-align: center;">
     <tr style="background-color: #f8f9fa;">
       <td colspan="3">
-        <h3>🖥️ Frontend (React UI)</h3>
+        <h3>Frontend (React UI)</h3>
         <p>User Interface • Voice Commands • Real-time Updates (Port: 3000)</p>
       </td>
     </tr>
@@ -21,15 +21,15 @@
     </tr>
     <tr style="background-color: #e9ecef;">
       <td width="33%">
-        <h3>⚙️ API Server (Node.js)</h3>
+        <h3> API Server (Node.js)</h3>
         <p>Task Coordination & Endpoints (Port: 5001)</p>
       </td>
       <td width="33%">
-        <h3>🤖 Agent Registry</h3>
+        <h3> Agent Registry</h3>
         <p>MCP Coordinator & Auto Task Routing (Port: 5002)</p>
       </td>
       <td width="33%">
-        <h3>🗄️ Shared Infrastructure</h3>
+        <h3> Shared Infrastructure</h3>
         <p>MongoDB (27017) & Redis (6379)</p>
       </td>
     </tr>
@@ -38,13 +38,13 @@
     </tr>
     <tr style="background-color: #f8f9fa;">
       <td colspan="3">
-        <h3>🧠 AI Agent Microservices (Isolated Containers)</h3>
+        <h3> AI Agent Microservices (Isolated Containers)</h3>
         <br/>
-        <b>🌐 Website Generator</b> (Landing Pages, Portfolios) <br/><br/>
-        <b>📈 Marketing Agent</b> (Email Campaigns, Social Media, Lead Gen) <br/><br/>
-        <b>🎨 Image Generator</b> (AI Artwork, Logos, Banners) <br/><br/>
-        <b>📊 Analytics Agent</b> (Data Analysis, Reports, Metrics) <br/><br/>
-        <b>🎙️ VoiceBot Processor</b> (Speech Processing, Audio Analysis)
+        <b> Website Generator</b> (Landing Pages, Portfolios) <br/><br/>
+        <b> Marketing Agent</b> (Email Campaigns, Social Media, Lead Gen) <br/><br/>
+        <b> Image Generator</b> (AI Artwork, Logos, Banners) <br/><br/>
+        <b> Analytics Agent</b> (Data Analysis, Reports, Metrics) <br/><br/>
+        <b> VoiceBot Processor</b> (Speech Processing, Audio Analysis)
       </td>
     </tr>
   </table>
